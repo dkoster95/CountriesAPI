@@ -67,6 +67,7 @@
 		7FED40AF264B49D0005958B6 /* Host.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Host.swift; sourceTree = "<group>"; };
 		7FED40B0264B49D0005958B6 /* CountryAPIProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryAPIProtocol.swift; sourceTree = "<group>"; };
 		7FED40CE264B5321005958B6 /* Models.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Models.xcodeproj; path = ../../Models/Models.xcodeproj; sourceTree = "<group>"; };
+		7FED40E8264B54CD005958B6 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				7FED40AF264B49D0005958B6 /* Host.swift */,
+				7FED40E8264B54CD005958B6 /* Development.xcconfig */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -329,6 +331,7 @@
 /* Begin XCBuildConfiguration section */
 		7FED409A264B490C005958B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FED40E8264B54CD005958B6 /* Development.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -393,6 +396,7 @@
 		};
 		7FED409B264B490C005958B6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FED40E8264B54CD005958B6 /* Development.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

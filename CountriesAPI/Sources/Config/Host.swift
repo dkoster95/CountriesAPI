@@ -9,14 +9,35 @@
 import Foundation
 import QuickHatch
 
-public struct RestCountriesEnvornment: HostEnvironment {
-    public var baseURL: String = "https://restcountries-v1.p.rapidapi.com"
+public class Host: HostEnvironment {
+    public var baseURL: String = "https://\(HostConfigReader.values.baseUrl)"
     public var headers: [String : String] {
-        let apiKey = "2a43f79623mshf4fdf6bff2304adp1d0b56jsn3886a99edd6b"
-        //let apiKey = Bundle.main.object(forInfoDictionaryKey: "APIKey") as! String
+        let apiKey = HostConfigReader.values.apiKey
         return ["x-rapidapi-key": apiKey,
-                "x-rapidapi-host": "restcountries-v1.p.rapidapi.com"]
+                "x-rapidapi-host": HostConfigReader.values.host]
     }
+}
+
+
+private class HostConfigReader {
+    class var values: HostSettings {
+        let data = try! PropertyListSerialization.data(fromPropertyList: Bundle.init(for: Host.self).infoDictionary!,
+                                                       format: PropertyListSerialization.PropertyListFormat.binary,
+                                                       options: 0)
+        let plistDecoder = PropertyListDecoder()
+        return try! plistDecoder.decode(HostSettings.self, from: data)
+        
+    }
+}
+
+private struct HostSettings: Decodable {
+    let apiKey: String
+    let host: String
+    let baseUrl: String
     
-    
+    enum CodingKeys: String, CodingKey {
+        case apiKey = "Api Key"
+        case host = "Host"
+        case baseUrl = "Base URL"
+    }
 }
