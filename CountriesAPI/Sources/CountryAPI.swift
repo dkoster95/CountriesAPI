@@ -21,7 +21,7 @@ public class CountryAPI: CountryAPIProtocol, GenericAPI {
         networkFactory = networkRequestFactory
     }
     
-    public func fetchAllCountries(completion completionHandler: @escaping (Result<[Country], Error>) -> Void) {
+    public func getAll(completion completionHandler: @escaping (Result<[Country], Error>) -> Void) {
         guard let request = try? URLRequest.get(url: networkEnvironment.baseURL + "/all",
                                                 encoding: URLEncoding.default,
                                                 headers: networkEnvironment.headers) else {
@@ -33,7 +33,7 @@ public class CountryAPI: CountryAPIProtocol, GenericAPI {
         }.resume()
     }
     
-    public func getCountryByName(name: String, completionHandler: @escaping (Result<[Country], Error>) -> Void) {
+    public func getBy(name: String, completionHandler: @escaping (Result<[Country], Error>) -> Void) {
         let urlPath = EncodingHelpers.escape("/name/{name}")
         guard let request = try? URLRequest.get(url: networkEnvironment.baseURL + urlPath,
                                                 params: ["name": name],
@@ -47,7 +47,7 @@ public class CountryAPI: CountryAPIProtocol, GenericAPI {
         }.resume()
     }
     
-    public func getCountryByCode(code: String, completionHandler: @escaping (Result<[Country], Error>) -> Void) {
+    public func getBy(code: String, completionHandler: @escaping (Result<[Country], Error>) -> Void) {
         guard let request = try? URLRequest.get(url: networkEnvironment.baseURL + "/alpha/",
                                            params: ["codes": code],
                                            encoding: URLEncoding.default,
@@ -63,7 +63,7 @@ public class CountryAPI: CountryAPIProtocol, GenericAPI {
 
 public extension CountryAPI {
     convenience init() {
-        self.init(networkEnvironment: RestCountriesEnvornment(),
+        self.init(networkEnvironment: Host(),
                   networkRequestFactory: QHRequestFactory(urlSession: URLSession.shared))
     }
 }

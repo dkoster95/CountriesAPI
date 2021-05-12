@@ -10,7 +10,7 @@ import Foundation
 import Models
 
 public protocol CountryAPIProtocol {
-    func fetchAllCountries(completion completionHandler: @escaping (Result<[Country],Error>) -> Void)
-    func getCountryByName(name: String, completionHandler: @escaping (Result<[Country],Error>) -> Void)
-    func getCountryByCode(code: String, completionHandler: @escaping (Result<[Country],Error>) -> Void)
+    func getAll(completion completionHandler: @escaping (Result<[Country],Error>) -> Void)
+    func getBy(name: String, completionHandler: @escaping (Result<[Country],Error>) -> Void)
+    func getBy(code: String, completionHandler: @escaping (Result<[Country],Error>) -> Void)
 }

@@ -14,8 +14,9 @@
 		7FED40B1264B49D1005958B6 /* CountryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FED40AD264B49D0005958B6 /* CountryAPI.swift */; };
 		7FED40B2264B49D1005958B6 /* Host.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FED40AF264B49D0005958B6 /* Host.swift */; };
 		7FED40B3264B49D1005958B6 /* CountryAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FED40B0264B49D0005958B6 /* CountryAPIProtocol.swift */; };
-		7FED40D8264B532B005958B6 /* Models.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FED40D4264B5321005958B6 /* Models.framework */; };
-		7FED40D9264B532B005958B6 /* Models.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7FED40D4264B5321005958B6 /* Models.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7FED4152264B5938005958B6 /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 7FED4151264B5938005958B6 /* Development.xcconfig */; };
+		7FED4164264B599D005958B6 /* Models.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FED4161264B5993005958B6 /* Models.framework */; };
+		7FED4165264B599D005958B6 /* Models.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7FED4161264B5993005958B6 /* Models.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +27,16 @@
 			remoteGlobalIDString = 7FED4087264B490C005958B6;
 			remoteInfo = CountriesAPI;
 		};
-		7FED40D3264B5321005958B6 /* PBXContainerItemProxy */ = {
+		7FED4160264B5993005958B6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7FED40CE264B5321005958B6 /* Models.xcodeproj */;
+			containerPortal = 7FED415B264B5993005958B6 /* Models.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 7FB1F9FE242D8A3700ACE217;
 			remoteInfo = Models;
 		};
-		7FED40D5264B5321005958B6 /* PBXContainerItemProxy */ = {
+		7FED4162264B5993005958B6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7FED40CE264B5321005958B6 /* Models.xcodeproj */;
+			containerPortal = 7FED415B264B5993005958B6 /* Models.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 7FB1FA07242D8A3700ACE217;
 			remoteInfo = ModelsTests;
@@ -49,7 +50,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7FED40D9264B532B005958B6 /* Models.framework in Embed Frameworks */,
+				7FED4165264B599D005958B6 /* Models.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,8 +67,8 @@
 		7FED40AD264B49D0005958B6 /* CountryAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryAPI.swift; sourceTree = "<group>"; };
 		7FED40AF264B49D0005958B6 /* Host.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Host.swift; sourceTree = "<group>"; };
 		7FED40B0264B49D0005958B6 /* CountryAPIProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryAPIProtocol.swift; sourceTree = "<group>"; };
-		7FED40CE264B5321005958B6 /* Models.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Models.xcodeproj; path = ../../Models/Models.xcodeproj; sourceTree = "<group>"; };
-		7FED40E8264B54CD005958B6 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
+		7FED4151264B5938005958B6 /* Development.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
+		7FED415B264B5993005958B6 /* Models.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Models.xcodeproj; path = ../../Models/Models.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FED40D8264B532B005958B6 /* Models.framework in Frameworks */,
+				7FED4164264B599D005958B6 /* Models.framework in Frameworks */,
 				7FED40AA264B49A7005958B6 /* QuickHatch in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,7 +95,7 @@
 		7FED407E264B490C005958B6 = {
 			isa = PBXGroup;
 			children = (
-				7FED40CD264B5311005958B6 /* Dependencies */,
+				7FED4147264B5909005958B6 /* Dependencies */,
 				7FED4089264B490C005958B6 /* Products */,
 				7FED408A264B490C005958B6 /* Sources */,
 				7FED4095264B490C005958B6 /* Tests */,
@@ -135,27 +136,10 @@
 		7FED40AE264B49D0005958B6 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				7FED4151264B5938005958B6 /* Development.xcconfig */,
 				7FED40AF264B49D0005958B6 /* Host.swift */,
-				7FED40E8264B54CD005958B6 /* Development.xcconfig */,
 			);
 			path = Config;
-			sourceTree = "<group>";
-		};
-		7FED40CD264B5311005958B6 /* Dependencies */ = {
-			isa = PBXGroup;
-			children = (
-				7FED40CE264B5321005958B6 /* Models.xcodeproj */,
-			);
-			path = Dependencies;
-			sourceTree = "<group>";
-		};
-		7FED40CF264B5321005958B6 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				7FED40D4264B5321005958B6 /* Models.framework */,
-				7FED40D6264B5321005958B6 /* ModelsTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		7FED40D7264B532B005958B6 /* Frameworks */ = {
@@ -163,6 +147,23 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7FED4147264B5909005958B6 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				7FED415B264B5993005958B6 /* Models.xcodeproj */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		7FED415C264B5993005958B6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7FED4161264B5993005958B6 /* Models.framework */,
+				7FED4163264B5993005958B6 /* ModelsTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,8 +254,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 7FED40CF264B5321005958B6 /* Products */;
-					ProjectRef = 7FED40CE264B5321005958B6 /* Models.xcodeproj */;
+					ProductGroup = 7FED415C264B5993005958B6 /* Products */;
+					ProjectRef = 7FED415B264B5993005958B6 /* Models.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -266,18 +267,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		7FED40D4264B5321005958B6 /* Models.framework */ = {
+		7FED4161264B5993005958B6 /* Models.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Models.framework;
-			remoteRef = 7FED40D3264B5321005958B6 /* PBXContainerItemProxy */;
+			remoteRef = 7FED4160264B5993005958B6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		7FED40D6264B5321005958B6 /* ModelsTests.xctest */ = {
+		7FED4163264B5993005958B6 /* ModelsTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = ModelsTests.xctest;
-			remoteRef = 7FED40D5264B5321005958B6 /* PBXContainerItemProxy */;
+			remoteRef = 7FED4162264B5993005958B6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -287,6 +288,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FED4152264B5938005958B6 /* Development.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,7 +333,6 @@
 /* Begin XCBuildConfiguration section */
 		7FED409A264B490C005958B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7FED40E8264B54CD005958B6 /* Development.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -396,7 +397,6 @@
 		};
 		7FED409B264B490C005958B6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7FED40E8264B54CD005958B6 /* Development.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
