@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "QuickHatch",
+        "repositoryURL": "https://github.com/dkoster95/QuickHatchSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "2fe161756d7f03311f457981660b57248c1eb4dc",
+          "version": "1.1.8"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
