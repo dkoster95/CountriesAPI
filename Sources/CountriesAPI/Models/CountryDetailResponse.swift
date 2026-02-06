@@ -6,7 +6,7 @@
 //
 import Foundation
 
-public struct NativeName: Codable {
+public struct NativeName: Codable, Sendable {
     public let official: String?
     public let common: String?
 }
@@ -15,28 +15,28 @@ public struct NativeName: Codable {
 //    public let spa: Spa?
 //}
 
-public struct Name: Codable {
+public struct Name: Codable, Sendable {
     public let common: String?
     public let official: String?
     public let nativeName: [String: NativeName]?
 }
 
-public struct Currency: Codable {
+public struct Currency: Codable, Sendable {
     public let symbol: String?
     public let name: String?
 }
 
-public struct Idd: Codable {
+public struct Idd: Codable, Sendable {
     public let root: String?
     public let suffixes: [String?]
 }
 
-public struct Translation: Codable {
+public struct Translation: Codable, Sendable {
     public let official: String?
     public let common: String?
 }
 
-public struct Translations: Codable {
+public struct Translations: Codable, Sendable {
     public let ara: Translation?
     public let bre: Translation?
     public let ces: Translation?
@@ -65,37 +65,37 @@ public struct Translations: Codable {
     public let zho: Translation?
 }
 
-public struct Maps: Codable {
+public struct Maps: Codable, Sendable {
     public let googleMaps: String?
     public let openStreetMaps: String?
 }
 
-public struct Car: Codable {
+public struct Car: Codable, Sendable {
     public let signs: [String?]
     public let side: String?
 }
 
-public struct Flags: Codable {
+public struct Flags: Codable, Sendable {
     public let png: String?
     public let svg: String?
     public let alt: String?
 }
 
-public struct CoatOfArms: Codable {
+public struct CoatOfArms: Codable, Sendable {
     public let png: String?
     public let svg: String?
 }
 
-public struct CapitalInfo: Codable {
+public struct CapitalInfo: Codable, Sendable {
     public let latlng: [Double?]
 }
 
-public struct PostalCode: Codable {
+public struct PostalCode: Codable, Sendable {
     public let format: String?
     public let regex: String?
 }
 
-public struct CountryResponse: Codable {
+public struct CountryResponse: Codable, Sendable {
     public let name: Name?
     public let flags: Flags?
     public let languages: [String: String]?
@@ -103,7 +103,7 @@ public struct CountryResponse: Codable {
     public let subregion: String?
 }
 
-public struct CountryDetailResponse: Codable {
+public struct CountryDetailResponse: Codable, Sendable {
     public let name: Name?
     public let tld: [String?]
     public let cca2: String?
