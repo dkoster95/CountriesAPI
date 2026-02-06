@@ -1,0 +1,24 @@
+{
+  "originHash" : "f61a046d269290c021ce51244c704f857176cd0f5e5275f07f87cd433226e2f7",
+  "pins" : [
+    {
+      "identity" : "aquarium",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/dkoster95/Aquarium.git",
+      "state" : {
+        "revision" : "f75b0d436a2adfe869b9d423a834e9f19bd180a4",
+        "version" : "1.0.1"
+      }
+    },
+    {
+      "identity" : "quickhatchhttp",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/dkoster95/QuickHatchHTTP.git",
+      "state" : {
+        "revision" : "81e0e265c64304b5e9aff702e0434502e63bcf9d",
+        "version" : "1.0.1"
+      }
+    }
+  ],
+  "version" : 3
+}

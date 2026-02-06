@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit
 
 public enum Region: String, RawRepresentable {
     case Americas = "Americas"
@@ -19,17 +18,17 @@ public enum Region: String, RawRepresentable {
     case Unknown
     
     
-    public var color: UIColor {
-        switch self {
-        case .Africa: return .cyan
-        case .Americas: return .blue
-        case .Asia: return .systemYellow
-        case .Europe: return .red
-        case .Oceania: return .systemOrange
-        case .Polar: return .brown
-        case .Unknown: return .gray
-        }
-    }
+//    public var color: UIColor {
+//        switch self {
+//        case .Africa: return .cyan
+//        case .Americas: return .blue
+//        case .Asia: return .systemYellow
+//        case .Europe: return .red
+//        case .Oceania: return .systemOrange
+//        case .Polar: return .brown
+//        case .Unknown: return .gray
+//        }
+//    }
 }
 
 extension Region: Codable {
