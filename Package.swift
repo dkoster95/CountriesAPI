@@ -24,7 +24,7 @@ let package = Package(
                  from: "1.0.1"),
         .package(name: "Aquarium",
                  url: "https://github.com/dkoster95/Aquarium.git",
-                 from: "1.0.1")
+                 from: "1.0.2")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.

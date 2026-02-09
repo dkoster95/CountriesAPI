@@ -41,7 +41,7 @@ public struct QHCountryRequestFactory: CountryRequestFactory {
         self.networkEnvironment = networkEnvironment
     }
     public func all() -> any DecodableRequest<[CountryResponse]> {
-        return QHHTTPRequest<[Country]>(url: "/all",
+        return QHHTTPRequest<[Country]>(url: networkEnvironment.baseURL + "/all?fields=name,flags,region,subregion,languages",
                                       method: .get,
                                       requestFactory: networkFactory)
     }

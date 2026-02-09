@@ -1,13 +1,13 @@
 {
-  "originHash" : "f61a046d269290c021ce51244c704f857176cd0f5e5275f07f87cd433226e2f7",
+  "originHash" : "7254cbe941ad857efe57cbfe858c499c9b42320268a5349780f12f8b8bd74147",
   "pins" : [
     {
       "identity" : "aquarium",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/dkoster95/Aquarium.git",
       "state" : {
-        "revision" : "f75b0d436a2adfe869b9d423a834e9f19bd180a4",
-        "version" : "1.0.1"
+        "revision" : "7b470ef8cffc54a6c56dbb51287f03eb9d382d57",
+        "version" : "1.0.2"
       }
     },
     {
