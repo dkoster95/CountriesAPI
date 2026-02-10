@@ -41,7 +41,7 @@ public struct QHCountryRequestFactory: CountryRequestFactory {
         self.networkEnvironment = networkEnvironment
     }
     public func all() -> any DecodableRequest<[CountryResponse]> {
-        return QHHTTPRequest<[Country]>(url: networkEnvironment.baseURL + "/all?fields=name,flags,region,subregion,languages",
+        return QHHTTPRequest<[CountryResponse]>(url: networkEnvironment.baseURL + "/all?fields=name,flags,region,subregion,languages",
                                       method: .get,
                                       requestFactory: networkFactory)
     }
@@ -49,14 +49,14 @@ public struct QHCountryRequestFactory: CountryRequestFactory {
     public func all(byName: String) -> any DecodableRequest<[CountryResponse]> {
         let urlTransformed = ParameterMappingURLTransformer().transform(url: networkEnvironment.baseURL + "/name/{name}?fields=name,flags,region,subregion,languages", parameters: ["name": byName])
 //        let parametersTransformed = DefaultParameterTransformer().transform(parameters: ["name": byName])
-        return QHHTTPRequest<[Country]>(url: urlTransformed,
+        return QHHTTPRequest<[CountryResponse]>(url: urlTransformed,
                                         method: .get,
                                         requestFactory: networkFactory)
     }
     
     public func all(byCode: String) -> any DecodableRequest<[CountryResponse]> {
         let parametersTransformed = DefaultParameterTransformer().transform(parameters: ["codes": byCode])
-        return QHHTTPRequest<[Country]>(url: "/all" + parametersTransformed,
+        return QHHTTPRequest<[CountryResponse]>(url: "/all" + parametersTransformed,
                                       method: .get,
                                       requestFactory: networkFactory)
     }
