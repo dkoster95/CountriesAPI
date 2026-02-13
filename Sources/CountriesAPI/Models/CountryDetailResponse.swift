@@ -87,7 +87,7 @@ public struct CoatOfArms: Codable, Sendable {
 }
 
 public struct CapitalInfo: Codable, Sendable {
-    public let latlng: [Double?]
+    public let latlng: [Double?]?
 }
 
 public struct PostalCode: Codable, Sendable {

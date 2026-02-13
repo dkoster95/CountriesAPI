@@ -21,7 +21,7 @@ let package = Package(
     dependencies: [
         .package(name: "QuickHatchHTTP",
                  url: "https://github.com/dkoster95/QuickHatchHTTP.git",
-                 from: "1.0.1"),
+                 from: "1.0.2"),
         .package(name: "Aquarium",
                  url: "https://github.com/dkoster95/Aquarium.git",
                  from: "1.0.2")
