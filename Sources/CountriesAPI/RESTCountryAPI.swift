@@ -83,7 +83,11 @@ public struct RESTCountryAPI: AsyncCountryAPI {
     public func findAll(byName: String) async throws -> [CountryResponse] {
         do {
             return try await requestFactory.all(byName: byName).responseDecoded().data
-        } catch let error as RequestError {
+        }
+        catch RequestError.requestWithError(statusCode: .notFound) {
+            return []
+        }
+        catch let error as RequestError {
             throw error
         }
     }
