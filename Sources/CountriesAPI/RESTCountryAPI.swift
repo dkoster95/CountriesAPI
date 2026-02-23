@@ -23,46 +23,6 @@ public class GenericHostEnvironment: HostEnvironment {
         self.baseURL = baseURL
     }
 }
-public typealias DecodableRequest<T: Codable> = HTTPRequestDecodedActionable<T> & HTTPRequest
-
-public protocol CountryRequestFactory {
-    func all() -> any DecodableRequest<[CountryResponse]>
-    func all(byName: String) -> any DecodableRequest<[CountryResponse]>
-    func all(byCode: String) -> any DecodableRequest<[CountryResponse]>
-}
-
-public struct QHCountryRequestFactory: CountryRequestFactory {
-    private let networkFactory: NetworkRequestFactory
-    public var networkEnvironment: HostEnvironment
-    public var path: String { return "" }
-    
-    public init(networkFactory: NetworkRequestFactory, networkEnvironment: HostEnvironment) {
-        self.networkFactory = networkFactory
-        self.networkEnvironment = networkEnvironment
-    }
-    public func all() -> any DecodableRequest<[CountryResponse]> {
-        return QHHTTPRequest<[CountryResponse]>(url: networkEnvironment.baseURL + "/all?fields=name,flags,region,subregion,languages",
-                                      method: .get,
-                                      requestFactory: networkFactory)
-    }
-    
-    public func all(byName: String) -> any DecodableRequest<[CountryResponse]> {
-        let urlTransformed = ParameterMappingURLTransformer().transform(url: networkEnvironment.baseURL + "/name/{name}?fields=name,flags,region,subregion,languages", parameters: ["name": byName])
-//        let parametersTransformed = DefaultParameterTransformer().transform(parameters: ["name": byName])
-        return QHHTTPRequest<[CountryResponse]>(url: urlTransformed,
-                                        method: .get,
-                                        requestFactory: networkFactory)
-    }
-    
-    public func all(byCode: String) -> any DecodableRequest<[CountryResponse]> {
-        let parametersTransformed = DefaultParameterTransformer().transform(parameters: ["codes": byCode])
-        return QHHTTPRequest<[CountryResponse]>(url: "/all" + parametersTransformed,
-                                      method: .get,
-                                      requestFactory: networkFactory)
-    }
-    
-    
-}
 
 public struct RESTCountryAPI: AsyncCountryAPI {
     
@@ -72,17 +32,17 @@ public struct RESTCountryAPI: AsyncCountryAPI {
         self.requestFactory = requestFactory
     }
     
-    public func findAll() async throws -> [CountryResponse] {
+    public func find() async throws -> [CountryResponse] {
         do {
-            return try await requestFactory.all().responseDecoded().data
+            return try await requestFactory.find().responseDecoded().data
         } catch let error as RequestError {
             throw error
         }
     }
     
-    public func findAll(byName: String) async throws -> [CountryResponse] {
+    public func find(byName: String) async throws -> [CountryResponse] {
         do {
-            return try await requestFactory.all(byName: byName).responseDecoded().data
+            return try await requestFactory.find(byName: byName).responseDecoded().data
         }
         catch RequestError.requestWithError(statusCode: .notFound) {
             return []
@@ -92,9 +52,9 @@ public struct RESTCountryAPI: AsyncCountryAPI {
         }
     }
     
-    public func findAll(byCode: String) async throws -> [CountryResponse] {
+    public func find(byCode: String) async throws -> [CountryResponse] {
         do {
-            return try await requestFactory.all(byCode: byCode).responseDecoded().data
+            return try await requestFactory.find(byCode: byCode).responseDecoded().data
         } catch let error as RequestError {
             throw error
         }

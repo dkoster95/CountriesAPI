@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol AsyncCountryAPI {
-    func findAll() async throws -> [CountryResponse]
-    func findAll(byName: String) async throws -> [CountryResponse]
-    func findAll(byCode: String) async throws -> [CountryResponse]
+    func find() async throws -> [CountryResponse]
+    func find(byName: String) async throws -> [CountryResponse]
+    func find(byCode: String) async throws -> [CountryResponse]
 }
