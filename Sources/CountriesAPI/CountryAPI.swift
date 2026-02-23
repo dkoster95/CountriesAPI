@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol AsyncCountryAPI {
+public protocol AsyncCountryAPI: Sendable {
     func find() async throws -> [CountryResponse]
     func find(byName: String) async throws -> [CountryResponse]
     func find(byCode: String) async throws -> [CountryResponse]

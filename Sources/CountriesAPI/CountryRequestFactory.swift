@@ -9,7 +9,7 @@ import Foundation
 
 public typealias DecodableRequest<T: Codable> = HTTPRequestDecodedActionable<T> & HTTPRequest
 
-public protocol CountryRequestFactory {
+public protocol CountryRequestFactory: Sendable {
     func find() -> any DecodableRequest<[CountryResponse]>
     func find(byName: String) -> any DecodableRequest<[CountryResponse]>
     func find(byCode: String) -> any DecodableRequest<[CountryResponse]>

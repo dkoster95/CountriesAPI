@@ -9,14 +9,14 @@
 import Foundation
 import QuickHatchHTTP
 
-public protocol HostEnvironment {
+public protocol HostEnvironment: Sendable {
     var baseURL: String { get }
     var headers: [String: String] { get }
 }
 
-public class GenericHostEnvironment: HostEnvironment {
-    public var headers: [String: String]
-    public var baseURL: String
+public final class GenericHostEnvironment: HostEnvironment {
+    public let headers: [String: String]
+    public let baseURL: String
     
     public init(headers: [String: String], baseURL: String) {
         self.headers = headers
