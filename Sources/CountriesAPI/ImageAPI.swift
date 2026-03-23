@@ -7,7 +7,7 @@
 import Foundation
 import QuickHatchHTTP
 
-public protocol ImageAPI {
+public protocol ImageAPI: Sendable {
     func get(url: String) async throws -> Data
 }
 

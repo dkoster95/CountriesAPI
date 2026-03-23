@@ -7,7 +7,7 @@
 import Foundation
 import QuickHatchHTTP
 
-public protocol ImageRequestFactorizable {
+public protocol ImageRequestFactorizable: Sendable {
     func imageRequest(url: String) -> HTTPRequest & HTTPRequestActionable
 }
 
