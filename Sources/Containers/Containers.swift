@@ -29,17 +29,27 @@ public struct CountriesAPIContainers {
                                 aquariums: [try CountriesAPIContainers.HTTPClient.prod()],
                                 logger: AquariumLoggerDefault())
         try aquarium.register(dependencyType: HostEnvironment.self, registration: { _ in environment }, with: .simple)
+        
+        // MARK: Registering Country API
         try aquarium.register(dependencyType: CountryRequestFactory.self,
-                          registration: { container in
+                              registration: { container in
             return QHCountryRequestFactory(networkFactory: try container.resolve(),
                                            networkEnvironment: try container.resolve())
         },
-                          with: .simple)
+                              with: .simple)
         try aquarium.register(dependencyType: AsyncCountryAPI.self,
-                          registration: { container in
+                              registration: { container in
             return RESTCountryAPI(requestFactory: try container.resolve())
         },
-                          with: .simple)
+                              with: .simple)
+        
+        // MARK: Registering Image API
+        try aquarium.register(dependencyType: ImageRequestFactorizable.self,
+                              registration: { ImageRequestFactory(networkFactory: try $0.resolve()) },
+                              with: .simple)
+        try aquarium.register(dependencyType: ImageAPI.self,
+                              registration: { RESTImageAPI(factory: try $0.resolve())},
+                              with: .simple)
         return aquarium
     }
 }

@@ -14,6 +14,10 @@ public protocol ImageAPI: Sendable {
 public struct RESTImageAPI: ImageAPI {
     private let factory: ImageRequestFactorizable
     
+    public init(factory: ImageRequestFactorizable) {
+        self.factory = factory
+    }
+    
     public func get(url: String) async throws -> Data {
         let request = factory.imageRequest(url: url)
         
