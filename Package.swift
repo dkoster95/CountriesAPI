@@ -5,9 +5,9 @@ import PackageDescription
 
 let package = Package(
     name: "CountriesAPI",
-    platforms: [.iOS(.v15),
+    platforms: [.iOS(.v17),
                 .watchOS(.v7),
-                .macOS(.v12),
+                .macOS(.v14),
                 .tvOS(.v14)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
@@ -19,22 +19,22 @@ let package = Package(
             targets: ["CountriesAPIContainers"]),
     ],
     dependencies: [
-        .package(name: "QuickHatchHTTP",
-                 url: "https://github.com/dkoster95/QuickHatchHTTP.git",
+        .package(url: "https://github.com/dkoster95/QuickHatchHTTP.git",
                  from: "1.0.2"),
-        .package(name: "Aquarium",
-                 url: "https://github.com/dkoster95/Aquarium.git",
-                 from: "1.0.2")
+        .package(url: "https://github.com/dkoster95/Aquarium.git",
+                 from: "1.0.3"),
+        .package(url: "https://github.com/dkoster95/QuickHatchCore.git",
+                 from: "1.0.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "CountriesAPI",
-            dependencies: ["QuickHatchHTTP"]),
+            dependencies: ["QuickHatchHTTP", "QuickHatchCore"]),
         .target(
             name: "CountriesAPIContainers",
-            dependencies: ["CountriesAPI", "Aquarium"],
+            dependencies: ["CountriesAPI", "Aquarium", "QuickHatchCore"],
             path: "Sources/Containers"),
         .testTarget(
             name: "CountriesAPITests",

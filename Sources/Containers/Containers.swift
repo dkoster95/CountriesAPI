@@ -10,6 +10,7 @@ import os
 import QuickHatchHTTP
 import Foundation
 import CountriesAPI
+import QuickHatchCore
 
 public struct CountriesAPIContainers {
     struct HTTPClient {

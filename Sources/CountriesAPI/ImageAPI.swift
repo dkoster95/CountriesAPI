@@ -6,10 +6,7 @@
 //
 import Foundation
 import QuickHatchHTTP
-
-public protocol ImageAPI: Sendable {
-    func get(url: String) async throws -> Data
-}
+import QuickHatchCore
 
 public struct RESTImageAPI: ImageAPI {
     private let factory: ImageRequestFactorizable

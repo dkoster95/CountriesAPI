@@ -1,13 +1,31 @@
 {
-  "originHash" : "b7e2028bd67b9f594d6028d162d664636a0c7d212c654d780716fdb7a68c2ea4",
+  "originHash" : "754d37a4e4a6c6ed760f65d3c51926758faf0ece12e43cb1a1f4a50800d8f544",
   "pins" : [
     {
       "identity" : "aquarium",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/dkoster95/Aquarium.git",
       "state" : {
-        "revision" : "7b470ef8cffc54a6c56dbb51287f03eb9d382d57",
-        "version" : "1.0.2"
+        "revision" : "08e7860c73e3dece6a2dbd6eb83f05dcc38b9d22",
+        "version" : "1.0.3"
+      }
+    },
+    {
+      "identity" : "pelicanswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/dkoster95/PelicanSwift.git",
+      "state" : {
+        "revision" : "5fb8d588edc94bf4c475abca8587d4cb09558361",
+        "version" : "3.1.1"
+      }
+    },
+    {
+      "identity" : "quickhatchcore",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/dkoster95/QuickHatchCore.git",
+      "state" : {
+        "revision" : "9bf3e99177f177414d90fe3fb2509a3afc0bb40b",
+        "version" : "1.0.0"
       }
     },
     {
